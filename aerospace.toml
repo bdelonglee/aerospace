@@ -211,7 +211,11 @@ run = 'move-node-to-workspace G'
 
 [[on-window-detected]]
 if.app-id = 'com.autodesk.Maya.2024'
-run = 'move-node-to-workspace M'
+run = ['layout tiling', 'move-node-to-workspace M'] # Qt windows are detected as floating by default
+
+[[on-window-detected]]
+if.app-id = 'com.adobe.Photoshop' # same id for Photoshop 2024 and 2025
+run = ['layout tiling'] # custom window frames are detected as floating by default
 
 [[on-window-detected]]
 if.app-id = 'com.nomachine.nxdock'
